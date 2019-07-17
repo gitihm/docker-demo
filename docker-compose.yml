@@ -1,17 +1,17 @@
-version: "3.5"
+version: "3"
 
 services:
-  weserver:
+  webserver:
     build: webserver
-    network:
+    networks:
       - dev_network
-    port:
-      - "7777/80"
+    ports:
+      - "7777:80"
   dbserver:
     build: dbserver
-    network:
+    networks:
       - dev_network
-    port:
+    ports:
       - "3307:3306"
     enviroment:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
