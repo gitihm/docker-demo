@@ -1,0 +1,21 @@
+version: "3.5"
+
+services:
+  weserver:
+    build: webserver
+    network:
+      - dev_network
+    port:
+      - "7777/80"
+  dbserver:
+    build: dbserver
+    network:
+      - dev_network
+    port:
+      - "3307:3306"
+    enviroment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_USER: "myuser"
+      MYSQL_PASSWORD: "mypassword"
+networks:
+  dev_network:
