@@ -53,8 +53,6 @@ services:
      ports:
         - "8080:80"
      environment:
-        MYSQL_USER: user
-        MYSQL_PASSWORD: test
-        MYSQL_ROOT_PASSWORD: test
+        PMA_ARBITRARY: 1
 volumes:
   my-db:
