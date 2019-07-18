@@ -11,10 +11,10 @@ services:
     volumes:
       - ./nginx/:/etc/nginx/conf.d/  
       - ./www/example.com/:/usr/share/nginx/html  
+    links:
+      - mysql
     depends_on:
       - nodejs
-      - mysql
-      - phpmyadmin
   nodejs:
     image: node:9.11.1-alpine
     container_name: nodejs
